@@ -241,7 +241,7 @@
     display: block;
     color: inherit;
     padding: 0 0.5em 0.5em;
-    transition: color 0.35s;
+    transition: color 0.35s ease;
     outline: none;
 
     &::after {
@@ -252,8 +252,7 @@
       height: 2px;
       background-color: $c-light;
       right: 0;
-      transition-property: width;
-      transition-duration: 0.35s;
+      transition: width 0.35s ease;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
