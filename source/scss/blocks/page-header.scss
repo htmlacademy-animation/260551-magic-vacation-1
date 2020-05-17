@@ -242,6 +242,7 @@
     color: inherit;
     padding: 0 0.5em 0.5em;
     transition: color 0.35s;
+    outline: none;
 
     &::after {
       content: "";
@@ -267,18 +268,8 @@
       }
     }
 
-    // prevent active menu item from hover/focus changes
     &.active {
       cursor: default;
-
-      &:hover,
-      &:focus {
-        color: $c-light;
-
-        &::after {
-          background-color: $c-light;
-        }
-      }
 
       &::after {
         left: 0;
@@ -286,10 +277,9 @@
       }
     }
 
-    &:hover,
-    &:focus {
+    &:hover:not(.active),
+    &:focus:not(.active) {
       color: $c-purple;
-      outline: none;
 
       &::after {
         opacity: 1;
