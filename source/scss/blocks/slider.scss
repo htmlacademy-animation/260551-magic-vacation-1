@@ -120,7 +120,7 @@
   .active .swiper-slide-next & {
     opacity: 1;
     transform: translateX(0);
-    
+
     @media (orientation: portrait) {
       opacity: 0;
       transform: translateX(2rem);
