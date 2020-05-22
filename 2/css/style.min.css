@@ -1705,7 +1705,7 @@ img {
   transform: translateX(-1rem);
   transition-property: opacity, transform;
   transition-duration: 0.5s;
-  transition-timing-function: cubic-bezier(0.4, 1, 1, 1); }
+  transition-timing-function: cubic-bezier(0.32, 0, 0.46, 1.33); }
   .page-header__logo:hover {
     opacity: 0.8; }
   .page-header__logo:focus {
@@ -1790,7 +1790,7 @@ img {
   display: flex;
   align-items: center;
   opacity: 0;
-  transition: opacity 0.35s cubic-bezier(0.4, 1, 1, 1) 0.2s; }
+  transition: opacity 0.35s cubic-bezier(0.32, 0, 0.46, 1.33) 0.2s; }
   .body--loaded .page-header__nav {
     opacity: 1; }
   @media (max-width: 1024px) and (orientation: portrait) {
@@ -1892,7 +1892,7 @@ img {
       height: 2px;
       background-color: #ffffff;
       right: 0;
-      transition: width 0.35s ease; }
+      transition: width 0.35s ease 0.2s; }
       @media (max-width: 1024px) and (orientation: portrait) {
         .page-header__menu a::after {
           left: 0;
@@ -1903,9 +1903,9 @@ img {
           left: 0;
           right: 0;
           background-color: #5f458c; } }
-    .page-header__menu a.active {
+    .body--loaded .page-header__menu a.active {
       cursor: default; }
-      .page-header__menu a.active::after {
+      .body--loaded .page-header__menu a.active::after {
         left: 0;
         width: 100%; }
     .page-header__menu a:hover:not(.active), .page-header__menu a:focus:not(.active) {
@@ -1917,7 +1917,11 @@ img {
         left: 0; }
 
 .page-header__social {
-  margin-left: 4.8rem; }
+  margin-left: 4.8rem;
+  transform: scale(0);
+  transition: transform 0.6s cubic-bezier(0.51, 1.5, 0.6, 1.26) 0.4s; }
+  .body--loaded .page-header__social {
+    transform: scale(1); }
   @media (min-width: 2000px) {
     .page-header__social {
       margin-left: 48px; } }
@@ -2642,7 +2646,7 @@ img {
   background-color: #ffffff;
   z-index: 1;
   transform: translateY(100%);
-  transition: transform 0.35s cubic-bezier(0.4, 1, 1, 1); }
+  transition: transform 0.35s cubic-bezier(0.32, 0, 0.46, 1.33); }
   .body--loaded .screen__footer {
     transform: translateY(0); }
   @media (max-width: 1024px) and (orientation: portrait) {
