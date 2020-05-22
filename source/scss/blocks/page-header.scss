@@ -39,7 +39,7 @@
   transform: translateX(-1rem);
   transition-property: opacity, transform;
   transition-duration: 0.5s;
-  transition-timing-function: cubic-bezier(0.4, 1, 1, 1);
+  transition-timing-function: $fast-ease-out;
 
   .body--loaded & {
     opacity: 1;
@@ -140,6 +140,12 @@
 .page-header__nav {
   display: flex;
   align-items: center;
+  opacity: 0;
+  transition: opacity 0.35s $fast-ease-out 0.2s;
+
+  .body--loaded & {
+    opacity: 1;
+  }
 
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
@@ -157,6 +163,7 @@
     .page-header--menu-opened & {
       transform: translateX(0);
     }
+
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
