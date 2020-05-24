@@ -308,12 +308,10 @@
 }
 
 .screen--prizes {
-  background-color: $c-dark;
 }
 
 .screen--game {
   position: relative;
-  background-color: $c-dark;
 
   &::before {
     content: "";
@@ -358,5 +356,4 @@
 }
 
 .screen--rules {
-  background-color: $c-dark;
 }

@@ -9,6 +9,7 @@ import form from './modules/form.js';
 import social from './modules/social.js';
 import onload from './modules/onload.js';
 import FullPageScroll from './modules/full-page-scroll';
+import PageBackground from './modules/page-background';
 
 // init modules
 mobileHeight();
@@ -23,3 +24,6 @@ onload();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
+
+const pageBackground = new PageBackground();
+pageBackground.init();
