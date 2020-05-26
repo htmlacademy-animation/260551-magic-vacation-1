@@ -10318,13 +10318,20 @@ class FullPageScroll {
 
   changeVisibilityDisplay() {
     this.screenElements.forEach((screen) => {
-      screen.classList.add(`screen--hidden`);
+      setTimeout(() => {
+        screen.classList.add(`screen--hidden`);
+      }, 350);
+
       screen.classList.remove(`active`);
     });
-    this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+
+    setTimeout(() => {
+      this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+    }, 400);
+
     setTimeout(() => {
       this.screenElements[this.activeScreen].classList.add(`active`);
-    }, 0);
+    }, 500);
   }
 
   changeActiveMenuItem() {
@@ -10447,11 +10454,11 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PageBackground; });
-  const SCREENS_WITH_BACKGROUND = [
-    'prizes',
-    'rules',
-    'game',
-  ];
+const SCREENS_WITH_BACKGROUND = [
+  `prizes`,
+  `rules`,
+  `game`,
+];
 
 class PageBackground {
   constructor() {

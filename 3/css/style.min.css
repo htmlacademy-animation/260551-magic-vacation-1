@@ -2609,6 +2609,9 @@ img {
     .screen {
       height: 100vh; } }
 
+.active {
+  z-index: 3; }
+
 .screen__wrapper {
   margin: 0 auto;
   padding: 0 4rem;
@@ -3375,7 +3378,8 @@ img {
   bottom: 0;
   background-color: #5f458c;
   transform: translateY(100%);
-  transition: transform 0.5s ease; }
+  transition: transform 0.4s ease;
+  z-index: 2; }
 
 .page-background--active {
   transform: translateY(0); }
