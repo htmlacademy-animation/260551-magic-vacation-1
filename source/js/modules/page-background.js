@@ -1,8 +1,8 @@
-  const SCREENS_WITH_BACKGROUND = [
-    'prizes',
-    'rules',
-    'game',
-  ];
+const SCREENS_WITH_BACKGROUND = [
+  `prizes`,
+  `rules`,
+  `game`,
+];
 
 export default class PageBackground {
   constructor() {

@@ -19,6 +19,10 @@
   }
 }
 
+.active {
+  z-index: 3;
+}
+
 .screen__wrapper {
   @include container;
   position: relative;
