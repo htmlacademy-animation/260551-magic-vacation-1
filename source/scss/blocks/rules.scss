@@ -124,6 +124,18 @@
   padding-left: 6.5rem;
   break-inside: avoid;
 
+  @for $index from 1 through 4 {
+    &:nth-child(#{$index}) {
+      &::before {
+        animation-delay: 0.2s * $index;
+      }
+
+      & p {
+        animation-delay: 0.3s * $index;
+      }
+    }
+  }
+
   @media (min-width: $stop-scaling) {
     margin: 0 0 62px;
     padding-top: 6px;
@@ -160,6 +172,11 @@
     line-height: 5rem;
     text-align: center;
 
+    animation-name: rulesPointer;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+
     @media (max-width: $tablet) and (orientation: portrait) {
       top: 1rem;
       width: 2.5rem;
@@ -179,6 +196,10 @@
 
   p {
     margin: 0;
+    animation-name: rulesText;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(1.4rem * 2.2);
@@ -190,6 +211,8 @@
   position: absolute;
   bottom: 6rem;
   right: 5.6rem;
+  pointer-events: none;
+  opacity: 0;
 
   @media (min-width: $stop-scaling) {
     bottom: 60px;
@@ -209,5 +232,62 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     bottom: 2rem;
     right: 1.5rem;
+  }
+}
+
+.screen--rules.active .rules__link--active {
+  pointer-events: auto;
+  opacity: 1;
+  animation-name: rulesLink;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+@keyframes rulesPointer {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rulesText {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  33% {
+    transform: translateX(30px);
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rulesLink {
+  0% {
+    color: transparent;
+    width: 0;
+  }
+
+  50% {
+    color: transparent;
+  }
+
+  100% {
+    color: inherit;
+    width: auto;
   }
 }
