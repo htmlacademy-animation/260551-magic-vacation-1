@@ -131,7 +131,7 @@
       }
 
       & p {
-        animation-delay: 0.3s * $index;
+        animation-delay: 0.33s * $index;
       }
     }
   }
@@ -173,8 +173,8 @@
     text-align: center;
 
     animation-name: rulesPointer;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-out;
+    animation-duration: 0.35s;
+    animation-timing-function: linear;
     animation-fill-mode: backwards;
 
     @media (max-width: $tablet) and (orientation: portrait) {
@@ -197,8 +197,8 @@
   p {
     margin: 0;
     animation-name: rulesText;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-out;
+    animation-duration: 0.35s;
+    animation-timing-function: linear;
     animation-fill-mode: backwards;
 
     @media (max-width: $tablet) and (orientation: portrait) {
@@ -238,56 +238,64 @@
 .screen--rules.active .rules__link--active {
   pointer-events: auto;
   opacity: 1;
+  transform-origin: right;
   animation-name: rulesLink;
-  animation-duration: 0.5s;
+  animation-duration: 0.35s;
   animation-timing-function: ease-out;
   animation-fill-mode: backwards;
 }
 
-@keyframes rulesPointer {
+@keyframes rulesPointerIncrease {
   0% {
-    opacity: 0;
+    color: transparent;
     transform: scale(0);
   }
 
-  80% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes rulesText {
-  0% {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-
   33% {
-    transform: translateX(30px);
-  }
-
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes rulesLink {
-  0% {
     color: transparent;
-    width: 0;
   }
 
-  50% {
-    color: transparent;
+  66% {
+    color: inherit;
+    transform: scale(1.2);
   }
 
   100% {
     color: inherit;
-    width: auto;
+    transform: scale(1);
+  }
+}
+
+@keyframes rulesTextSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(1.2rem);
+  }
+
+  66% {
+    opacity: 1;
+    transform: translateX(0.2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rulesLinkExpand {
+  0% {
+    color: transparent;
+    transform: scaleX(0);
+  }
+
+  70% {
+    color: transparent;
+    transform: scaleX(0.7);
+  }
+
+  100% {
+    color: inherit;
+    transform: scaleX(1);
   }
 }
