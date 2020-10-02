@@ -172,7 +172,7 @@
     line-height: 5rem;
     text-align: center;
 
-    animation-name: rulesPointer;
+    animation-name: rulesPointerIncrease;
     animation-duration: 0.35s;
     animation-timing-function: linear;
     animation-fill-mode: backwards;
@@ -196,7 +196,7 @@
 
   p {
     margin: 0;
-    animation-name: rulesText;
+    animation-name: rulesTextSlide;
     animation-duration: 0.35s;
     animation-timing-function: linear;
     animation-fill-mode: backwards;
@@ -239,7 +239,7 @@
   pointer-events: auto;
   opacity: 1;
   transform-origin: right;
-  animation-name: rulesLink;
+  animation-name: rulesLinkExpand;
   animation-duration: 0.35s;
   animation-timing-function: ease-out;
   animation-fill-mode: backwards;
