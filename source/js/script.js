@@ -60,4 +60,3 @@ const animationIntroDate = new AccentTypographyBuild(
 );
 
 animationIntroDate.runAnimation();
-
